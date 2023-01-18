@@ -1,0 +1,1 @@
+*/5 * * * * curl -m 10 --retry 5 -o /dev/null -fs -X PUT "https://api.cloudflare.com/client/v4/zones/$zone_identifier/dns_records/$identifier" -H "Authorization: Bearer $token" -H "Content-Type: application/json" --data '{"type":"A","name":"'$domain'","content":"'$(curl -s https://api.ipify.org)'"}' && date && echo $(curl -s https://api.ipify.org)
